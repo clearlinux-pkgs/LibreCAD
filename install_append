@@ -1,0 +1,12 @@
+mkdir -p %{buildroot}/usr/bin
+install -m0755 unix/librecad %{buildroot}/usr/bin/
+mkdir -p %{buildroot}/usr/share/applications
+install desktop/librecad.desktop %{buildroot}/usr/share/applications/
+mkdir -p %{buildroot}/usr/share/man/man1
+install desktop/librecad.1 %{buildroot}/usr/share/man/man1/
+mkdir -p %{buildroot}/usr/share/doc/librecad
+cp -arv librecad/support/doc/* %{buildroot}/usr/share/doc/librecad/
+mkdir -p %{buildroot}/usr/share/librecad
+cp -arv unix/resources/* %{buildroot}/usr/share/librecad/
+mkdir -p %{buildroot}/usr/share/icons/hicolor/scalable/apps
+install desktop/graphics_icons_and_splash/Icon\ LibreCAD/Icon_Librecad.svg %{buildroot}/usr/share/icons/hicolor/scalable/apps/
