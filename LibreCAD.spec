@@ -4,7 +4,7 @@
 #
 Name     : LibreCAD
 Version  : 2.1.3
-Release  : 1
+Release  : 2
 URL      : https://github.com/LibreCAD/LibreCAD/archive/2.1.3.tar.gz
 Source0  : https://github.com/LibreCAD/LibreCAD/archive/2.1.3.tar.gz
 Summary  : 2D CAD program that can read DXF and DWG files and can write DXF, PDF and SVG files.
@@ -25,6 +25,7 @@ BuildRequires : pkgconfig(Qt5Widgets)
 BuildRequires : qtbase-dev
 BuildRequires : qttools-dev
 Patch1: 0001-fix-build-with-Qt-5.11.patch
+Patch2: 0002-Fix-build-with-Qt-5.15-missing-QPainterPath-include.patch
 
 %description
 With this plugins you can import drawings in PIC file format.
@@ -77,6 +78,7 @@ man components for the LibreCAD package.
 %setup -q -n LibreCAD-2.1.3
 cd %{_builddir}/LibreCAD-2.1.3
 %patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -89,7 +91,7 @@ test -r config.log && cat config.log
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1586974341
+export SOURCE_DATE_EPOCH=1601934304
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/LibreCAD
 cp %{_builddir}/LibreCAD-2.1.3/LICENSE %{buildroot}/usr/share/package-licenses/LibreCAD/76a34df153c7329f753e4b4a69aa80387c96ea42
