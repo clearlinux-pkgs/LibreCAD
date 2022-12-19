@@ -1,2 +1,2 @@
-0001-fix-build-with-Qt-5.11.patch
-0002-Fix-build-with-Qt-5.15-missing-QPainterPath-include.patch
+#0001-fix-build-with-Qt-5.11.patch
+#0002-Fix-build-with-Qt-5.15-missing-QPainterPath-include.patch
