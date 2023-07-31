@@ -4,10 +4,10 @@
 # Using build pattern: qmake
 #
 Name     : LibreCAD
-Version  : 2.2.0.1
-Release  : 4
-URL      : https://github.com/LibreCAD/LibreCAD/archive/2.2.0.1/LibreCAD-2.2.0.1.tar.gz
-Source0  : https://github.com/LibreCAD/LibreCAD/archive/2.2.0.1/LibreCAD-2.2.0.1.tar.gz
+Version  : 2.2.0.2
+Release  : 5
+URL      : https://github.com/LibreCAD/LibreCAD/archive/2.2.0.2/LibreCAD-2.2.0.2.tar.gz
+Source0  : https://github.com/LibreCAD/LibreCAD/archive/2.2.0.2/LibreCAD-2.2.0.2.tar.gz
 Summary  : 2D CAD program that can read DXF and DWG files and can write DXF, PDF and SVG files.
 Group    : Development/Tools
 License  : GPL-2.0
@@ -77,10 +77,10 @@ man components for the LibreCAD package.
 
 
 %prep
-%setup -q -n LibreCAD-2.2.0.1
-cd %{_builddir}/LibreCAD-2.2.0.1
+%setup -q -n LibreCAD-2.2.0.2
+cd %{_builddir}/LibreCAD-2.2.0.2
 pushd ..
-cp -a LibreCAD-2.2.0.1 buildavx2
+cp -a LibreCAD-2.2.0.2 buildavx2
 popd
 
 %build
@@ -104,7 +104,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1689018213
+export SOURCE_DATE_EPOCH=1690838755
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/LibreCAD
 cp %{_builddir}/LibreCAD-%{version}/desktop/graphics_program_icons/layerlistIcons/License %{buildroot}/usr/share/package-licenses/LibreCAD/6b5c4cb72f8a6ad3367b7b491fc99e46bb604aaa || :
@@ -139,8 +139,6 @@ install desktop/graphics_icons_and_splash/Icon\ LibreCAD/Icon_Librecad.svg %{bui
 %defattr(-,root,root,-)
 /usr/share/applications/librecad.desktop
 /usr/share/icons/hicolor/scalable/apps/Icon_Librecad.svg
-/usr/share/librecad/fonts/OpenGostTypeA-Regular.lff
-/usr/share/librecad/fonts/OpenGostTypeB-Regular.lff
 /usr/share/librecad/fonts/amiri-regular.lff
 /usr/share/librecad/fonts/azomix.lff
 /usr/share/librecad/fonts/azomix_i.lff
@@ -165,6 +163,8 @@ install desktop/graphics_icons_and_splash/Icon\ LibreCAD/Icon_Librecad.svg %{bui
 /usr/share/librecad/fonts/kst32b.lff
 /usr/share/librecad/fonts/lc_opengost-ar.lff
 /usr/share/librecad/fonts/lc_opengost-br.lff
+/usr/share/librecad/fonts/opengosttypea-regular.lff
+/usr/share/librecad/fonts/opengosttypeb-regular.lff
 /usr/share/librecad/fonts/romanc.lff
 /usr/share/librecad/fonts/romancs.lff
 /usr/share/librecad/fonts/romand.lff
