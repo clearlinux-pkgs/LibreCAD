@@ -1,0 +1,1 @@
+export PATH=/usr/lib64/qt5/bin:${PATH}

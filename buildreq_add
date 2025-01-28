@@ -3,3 +3,5 @@
 boost-dev
 mesa-dev
 qtbase-dev
+qtsvg-dev
+qttools-dev
